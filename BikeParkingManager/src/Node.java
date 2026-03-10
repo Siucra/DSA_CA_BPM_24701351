@@ -22,7 +22,6 @@ public class Node {
     public Object getElement() {
         return element;
     }
-
     
     public void setNext(Node next) {
         this.next = next;
