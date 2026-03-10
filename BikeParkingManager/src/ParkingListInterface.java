@@ -7,4 +7,9 @@
 
 public interface ParkingListInterface {
     
+    boolean isEmpty();
+    int size();
+    void add(Object e, int index);
+    Object get(int index);
+    Object remove(Object e);
 }
