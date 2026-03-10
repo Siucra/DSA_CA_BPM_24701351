@@ -1,4 +1,3 @@
-
 /**
  * BikeParkingApp.java
  * 10/03/2026
@@ -9,7 +8,8 @@
 public class BikeParkingApp {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        GUI myGUI = new GUI();
+        myGUI.setVisible(true);
     }
     
 }
