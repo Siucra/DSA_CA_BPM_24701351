@@ -1,15 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+
+import javax.swing.JOptionPane;
+/**
+ * GUI.java
+ * 10/03/2026
+ * @author DENISE BALASMEH
+ * x24701351
  */
 
-/**
- *
- * @author 05den
- */
 public class GUI extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUI.class.getName());
+    
+    ParkingStack parkingStack = new ParkingStack();
+    ParkingList waitingList = new ParkingList();
+
+    private final int maxSpaces = 5;
+    private int parkedBikes = 0;
 
     /**
      * Creates new form GUI
@@ -49,7 +55,6 @@ public class GUI extends javax.swing.JFrame {
         ownerNameLbl.setText("Owner name:");
 
         bikeIdTF.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
-        bikeIdTF.setText("i.e 1234");
         bikeIdTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bikeIdTFActionPerformed(evt);
@@ -57,7 +62,6 @@ public class GUI extends javax.swing.JFrame {
         });
 
         OwnerNameTF.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
-        OwnerNameTF.setText("i.e Bob");
         OwnerNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OwnerNameTFActionPerformed(evt);
@@ -72,14 +76,29 @@ public class GUI extends javax.swing.JFrame {
         });
 
         ParkBikeBtn.setText("Park Bike");
+        ParkBikeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ParkBikeBtnActionPerformed(evt);
+            }
+        });
 
         JoinWaitingListBtn.setText("Join Waiting List");
 
         RemoveBikeBtn.setText("Remove Bike");
 
         addBikeBtn.setText("add");
+        addBikeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBikeBtnActionPerformed(evt);
+            }
+        });
 
         exitBtn.setText("Exit");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,6 +166,10 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        private void clearAll(){
+        bikeIdTF.setText("");
+        OwnerNameTF.setText("");
+    }
     private void bikeIdTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bikeIdTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bikeIdTFActionPerformed
@@ -156,8 +179,50 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_OwnerNameTFActionPerformed
 
     private void CheckAvailSpaceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckAvailSpaceBtnActionPerformed
-        // TODO add your handling code here:
+        int available = maxSpaces - parkedBikes;
+        JOptionPane.showMessageDialog(null,
+                "Available parking spaces: " + available);
     }//GEN-LAST:event_CheckAvailSpaceBtnActionPerformed
+
+    private void addBikeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBikeBtnActionPerformed
+        Bike bike = new Bike();
+        
+        bike.setBikeId(bikeIdTF.getText());
+        bike.setOwnerName(OwnerNameTF.getText());
+        parkingStack.push(bike);
+        JOptionPane.showMessageDialog(null,"Bike successfully added to parkingStack");
+        clearAll();
+        /*
+        System.out.println("Top of parking stack: Bike ID = " 
+        + parkingStack.peek().getBikeId() 
+        + ", Owner = " 
+        + parkingStack.peek().getOwnerName());
+        */
+        
+        
+        
+        
+    }//GEN-LAST:event_addBikeBtnActionPerformed
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitBtnActionPerformed
+
+    private void ParkBikeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParkBikeBtnActionPerformed
+        Bike bike = new Bike();
+        bike.setBikeId(bikeIdTF.getText());
+        bike.setOwnerName(OwnerNameTF.getText());
+
+        if (parkedBikes < maxSpaces) {
+            parkingStack.push(bike);
+            parkedBikes++;
+            JOptionPane.showMessageDialog(null,"Bike parked successfully");
+        } 
+        else {
+            JOptionPane.showMessageDialog(null,"Parking full. Please join the waiting list");
+        }
+        clearAll();
+    }//GEN-LAST:event_ParkBikeBtnActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,7 +6,7 @@
  */
 
 public class Bike {
-    private int bikeId;
+    private String bikeId;
     private String ownerName;
 
    // public Bike() {//NULL CONSTRUCTOR
@@ -17,11 +17,11 @@ public class Bike {
         //this.ownerName = ownerName;
     //}
 
-    public int getBikeId() {
+    public String getBikeId() {
         return bikeId;
     }
 
-    public void setBikeId(int bikeId) {
+    public void setBikeId(String bikeId) {
         this.bikeId = bikeId;
     }
 

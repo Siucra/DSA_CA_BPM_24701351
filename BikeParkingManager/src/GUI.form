@@ -121,7 +121,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="10" style="2"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="i.e 1234"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bikeIdTFActionPerformed"/>
@@ -132,7 +131,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="10" style="2"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="i.e Bob"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OwnerNameTFActionPerformed"/>
@@ -150,6 +148,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Park Bike"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ParkBikeBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="JoinWaitingListBtn">
       <Properties>
@@ -165,11 +166,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBikeBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="exitBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitBtnActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
