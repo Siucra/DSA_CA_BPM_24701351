@@ -27,21 +27,137 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        bikeIdLbl = new javax.swing.JLabel();
+        ownerNameLbl = new javax.swing.JLabel();
+        bikeIdTF = new javax.swing.JTextField();
+        OwnerNameTF = new javax.swing.JTextField();
+        CheckAvailSpaceBtn = new javax.swing.JButton();
+        ParkBikeBtn = new javax.swing.JButton();
+        JoinWaitingListBtn = new javax.swing.JButton();
+        RemoveBikeBtn = new javax.swing.JButton();
+        addBikeBtn = new javax.swing.JButton();
+        exitBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("DOCKLAND BPM");
+
+        bikeIdLbl.setText("Bike id:");
+
+        ownerNameLbl.setText("Owner name:");
+
+        bikeIdTF.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        bikeIdTF.setText("i.e 1234");
+        bikeIdTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bikeIdTFActionPerformed(evt);
+            }
+        });
+
+        OwnerNameTF.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        OwnerNameTF.setText("i.e Bob");
+        OwnerNameTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OwnerNameTFActionPerformed(evt);
+            }
+        });
+
+        CheckAvailSpaceBtn.setText("Check Available Space");
+        CheckAvailSpaceBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckAvailSpaceBtnActionPerformed(evt);
+            }
+        });
+
+        ParkBikeBtn.setText("Park Bike");
+
+        JoinWaitingListBtn.setText("Join Waiting List");
+
+        RemoveBikeBtn.setText("Remove Bike");
+
+        addBikeBtn.setText("add");
+
+        exitBtn.setText("Exit");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(exitBtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 96, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ownerNameLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(OwnerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bikeIdLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9))
+                    .addComponent(CheckAvailSpaceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                    .addComponent(ParkBikeBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JoinWaitingListBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(RemoveBikeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(addBikeBtn)
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(bikeIdLbl)
+                        .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(addBikeBtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ownerNameLbl)
+                    .addComponent(OwnerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(CheckAvailSpaceBtn)
+                .addGap(18, 18, 18)
+                .addComponent(ParkBikeBtn)
+                .addGap(18, 18, 18)
+                .addComponent(JoinWaitingListBtn)
+                .addGap(18, 18, 18)
+                .addComponent(RemoveBikeBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exitBtn)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bikeIdTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bikeIdTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bikeIdTFActionPerformed
+
+    private void OwnerNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OwnerNameTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OwnerNameTFActionPerformed
+
+    private void CheckAvailSpaceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckAvailSpaceBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckAvailSpaceBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,5 +185,16 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CheckAvailSpaceBtn;
+    private javax.swing.JButton JoinWaitingListBtn;
+    private javax.swing.JTextField OwnerNameTF;
+    private javax.swing.JButton ParkBikeBtn;
+    private javax.swing.JButton RemoveBikeBtn;
+    private javax.swing.JButton addBikeBtn;
+    private javax.swing.JLabel bikeIdLbl;
+    private javax.swing.JTextField bikeIdTF;
+    private javax.swing.JButton exitBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel ownerNameLbl;
     // End of variables declaration//GEN-END:variables
 }
