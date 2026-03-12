@@ -21,6 +21,7 @@ public class GUI extends javax.swing.JFrame {
      * Creates new form GUI
      */
     public GUI() {
+        getContentPane().setBackground(new java.awt.Color(199, 233, 237)); //CHANGE GUI COLOUR
         initComponents();
     }
 
@@ -46,7 +47,7 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("DOCKLAND BPM");
 
         bikeIdLbl.setText("Bike id:");
@@ -54,6 +55,7 @@ public class GUI extends javax.swing.JFrame {
         ownerNameLbl.setText("Owner name:");
 
         bikeIdTF.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        bikeIdTF.setForeground(new java.awt.Color(255, 255, 255));
         bikeIdTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bikeIdTFActionPerformed(evt);
@@ -61,12 +63,15 @@ public class GUI extends javax.swing.JFrame {
         });
 
         OwnerNameTF.setFont(new java.awt.Font("Segoe UI", 2, 10)); // NOI18N
+        OwnerNameTF.setForeground(new java.awt.Color(255, 255, 255));
         OwnerNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OwnerNameTFActionPerformed(evt);
             }
         });
 
+        CheckAvailSpaceBtn.setBackground(new java.awt.Color(195, 215, 217));
+        CheckAvailSpaceBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         CheckAvailSpaceBtn.setText("Check Available Space");
         CheckAvailSpaceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +79,9 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        ParkBikeBtn.setBackground(new java.awt.Color(195, 215, 217));
+        ParkBikeBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ParkBikeBtn.setForeground(new java.awt.Color(0, 0, 0));
         ParkBikeBtn.setText("Park Bike");
         ParkBikeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +89,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        JoinWaitingListBtn.setBackground(new java.awt.Color(195, 215, 217));
+        JoinWaitingListBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         JoinWaitingListBtn.setText("Join Waiting List");
         JoinWaitingListBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +98,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        RemoveBikeBtn.setBackground(new java.awt.Color(195, 215, 217));
+        RemoveBikeBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         RemoveBikeBtn.setText("Remove Bike");
         RemoveBikeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +107,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        exitBtn.setBackground(new java.awt.Color(127, 140, 141));
         exitBtn.setText("Exit");
         exitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,30 +120,31 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 96, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ParkBikeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(CheckAvailSpaceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                        .addComponent(JoinWaitingListBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(RemoveBikeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ownerNameLbl)
-                                .addComponent(bikeIdLbl))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(OwnerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(135, 135, 135))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exitBtn)
-                .addGap(17, 17, 17))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CheckAvailSpaceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JoinWaitingListBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(RemoveBikeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ownerNameLbl)
+                                            .addComponent(bikeIdLbl))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(OwnerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(ParkBikeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(9, 9, 9))
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,9 +167,9 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(JoinWaitingListBtn)
                 .addGap(18, 18, 18)
                 .addComponent(RemoveBikeBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(exitBtn)
-                .addGap(8, 8, 8))
+                .addGap(18, 18, 18)
+                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
