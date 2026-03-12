@@ -12,30 +12,34 @@ public class ParkingStack {
     public ParkingStack(){//NULL CONSTRUCTOR
     }
     
-    public void push(Bike b){
-        Node newNode = new Node(b);
+    public void push(Vehicle v){
+        Node newNode = new Node(v);
         newNode.setNext(top); //link new node to the prev top node
         top = newNode; //update top node ref to new node
         size++;
     }
     
-    public Bike pop(){
+    public Vehicle pop(){
         if (top==null){
             return null;
         }
         
-        Bike bike = (Bike) top.getElement(); //get the bike stored in the top node
+       Vehicle vehicle = (Vehicle) top.getElement(); //get the vehicle stored in the top node
         top = top.getNode(); //mode the top ref to the next node in stack
         size--;
         
-        return bike;
+        return vehicle;
     }
     
-    public Bike peek(){
+    public Vehicle peek(){
         if(top ==null){
             return null;
         }
-        return (Bike) top.getElement();
+        return (Vehicle) top.getElement();
+    }
+    
+    public int size(){
+        return size;
     }
     
 }

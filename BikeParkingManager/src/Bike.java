@@ -5,9 +5,8 @@
  * x24701351
  */
 
-public class Bike {
+public class Bike extends Vehicle{
     private String bikeId;
-    private String ownerName;
 
    // public Bike() {//NULL CONSTRUCTOR
     //}
@@ -23,14 +22,6 @@ public class Bike {
 
     public void setBikeId(String bikeId) {
         this.bikeId = bikeId;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
     }
     
     public String toString(){
