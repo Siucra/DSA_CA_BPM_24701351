@@ -42,7 +42,6 @@ public class GUI extends javax.swing.JFrame {
         ParkBikeBtn = new javax.swing.JButton();
         JoinWaitingListBtn = new javax.swing.JButton();
         RemoveBikeBtn = new javax.swing.JButton();
-        addBikeBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,13 +82,16 @@ public class GUI extends javax.swing.JFrame {
         });
 
         JoinWaitingListBtn.setText("Join Waiting List");
+        JoinWaitingListBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JoinWaitingListBtnActionPerformed(evt);
+            }
+        });
 
         RemoveBikeBtn.setText("Remove Bike");
-
-        addBikeBtn.setText("add");
-        addBikeBtn.addActionListener(new java.awt.event.ActionListener() {
+        RemoveBikeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBikeBtnActionPerformed(evt);
+                RemoveBikeBtnActionPerformed(evt);
             }
         });
 
@@ -105,62 +107,55 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(exitBtn)))
+                .addGap(122, 122, 122)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 96, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ownerNameLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(OwnerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bikeIdLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9))
-                    .addComponent(CheckAvailSpaceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                    .addComponent(ParkBikeBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JoinWaitingListBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RemoveBikeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(addBikeBtn)
-                .addGap(45, 45, 45))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ParkBikeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(CheckAvailSpaceBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                        .addComponent(JoinWaitingListBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(RemoveBikeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ownerNameLbl)
+                                .addComponent(bikeIdLbl))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(OwnerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(135, 135, 135))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitBtn)
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bikeIdLbl)
-                        .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(addBikeBtn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bikeIdLbl)
+                    .addComponent(bikeIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ownerNameLbl)
                     .addComponent(OwnerNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(CheckAvailSpaceBtn)
                 .addGap(18, 18, 18)
                 .addComponent(ParkBikeBtn)
+                .addGap(18, 18, 18)
+                .addComponent(CheckAvailSpaceBtn)
                 .addGap(18, 18, 18)
                 .addComponent(JoinWaitingListBtn)
                 .addGap(18, 18, 18)
                 .addComponent(RemoveBikeBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(exitBtn)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addGap(8, 8, 8))
         );
 
         pack();
@@ -184,49 +179,63 @@ public class GUI extends javax.swing.JFrame {
                 "Available parking spaces: " + available);
     }//GEN-LAST:event_CheckAvailSpaceBtnActionPerformed
 
-    private void addBikeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBikeBtnActionPerformed
-        Bike bike = new Bike();
-        
-        bike.setBikeId(bikeIdTF.getText());
-        bike.setOwnerName(OwnerNameTF.getText());
-        parkingStack.push(bike);
-        JOptionPane.showMessageDialog(null,"Bike successfully added to parkingStack");
-        clearAll();
-        /*
-        System.out.println("Top of parking stack: Bike ID = " 
-        + parkingStack.peek().getBikeId() 
-        + ", Owner = " 
-        + parkingStack.peek().getOwnerName());
-        */
-        
-        
-        
-        
-    }//GEN-LAST:event_addBikeBtnActionPerformed
-
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void ParkBikeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParkBikeBtnActionPerformed
-        Bike bike = new Bike();
-        bike.setBikeId(bikeIdTF.getText());
-        bike.setOwnerName(OwnerNameTF.getText());
+    if(bikeIdTF.getText().isEmpty() || OwnerNameTF.getText().isEmpty()){
+        JOptionPane.showMessageDialog(null,"Enter Bike ID and Owner Name");
+        return;
+    }
+    
+    Bike bike = new Bike();
+    bike.setBikeId(bikeIdTF.getText());
+    bike.setOwnerName(OwnerNameTF.getText());
 
-        if (parkedBikes < maxSpaces) {
-            parkingStack.push(bike);
-            parkedBikes++;
-            JOptionPane.showMessageDialog(null,"Bike parked successfully");
-        } 
-        else {
-            JOptionPane.showMessageDialog(null,"Parking full. Please join the waiting list");
-        }
-        clearAll();
+    if (parkedBikes < maxSpaces) {
+        parkingStack.push(bike);
+        parkedBikes++;
+        JOptionPane.showMessageDialog(null,"Bike parked successfully");
+    } 
+    else {
+        JOptionPane.showMessageDialog(null,"Parking full. Please join the waiting list");
+    }
+    
+    clearAll();
     }//GEN-LAST:event_ParkBikeBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void JoinWaitingListBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JoinWaitingListBtnActionPerformed
+       Bike bike = new Bike();
+       bike.setBikeId(bikeIdTF.getText());
+       bike.setOwnerName(OwnerNameTF.getText());
+
+       waitingList.add(bike, waitingList.size());
+
+       JOptionPane.showMessageDialog(null,"Bike added to waiting list");
+       clearAll();
+    }//GEN-LAST:event_JoinWaitingListBtnActionPerformed
+
+    private void RemoveBikeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveBikeBtnActionPerformed
+       Bike removedBike = parkingStack.pop();
+        if (removedBike == null) {
+            JOptionPane.showMessageDialog(null,"No bikes in parking");
+        } 
+        else {
+            parkedBikes--;
+            JOptionPane.showMessageDialog(null,"Bike removed: " + removedBike);
+
+            // Assign space to waiting list
+            if (!waitingList.isEmpty()) {
+                Bike nextBike = (Bike) waitingList.get(0);
+                waitingList.remove(nextBike);
+                parkingStack.push(nextBike);
+                parkedBikes++;
+                JOptionPane.showMessageDialog(null,"Bike from waiting list parked: " + nextBike);
+             }
+          }
+    }//GEN-LAST:event_RemoveBikeBtnActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -255,7 +264,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField OwnerNameTF;
     private javax.swing.JButton ParkBikeBtn;
     private javax.swing.JButton RemoveBikeBtn;
-    private javax.swing.JButton addBikeBtn;
     private javax.swing.JLabel bikeIdLbl;
     private javax.swing.JTextField bikeIdTF;
     private javax.swing.JButton exitBtn;
